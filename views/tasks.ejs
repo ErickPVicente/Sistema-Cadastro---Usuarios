@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #6a11cb 0%, #2575fc 100%);
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        .container-tarefas {
+            background: #fff;
+            margin-top: 48px;
+            padding: 32px 28px;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(37,117,252,0.13);
+            max-width: 1200px;
+            min-width: unset;
+        }
+        h1 {
+            color: #2575fc;
+            margin-bottom: 28px;
+            text-align: center;
+            text-shadow: 1px 2px 8px rgba(0,0,0,0.10);
+            font-size: 2.3rem;
+            letter-spacing: 1px;
+        }
+        form.nova-tarefa {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+        .nova-tarefa input[type="text"],
+        .nova-tarefa input[type="date"],
+        .nova-tarefa select {
+            padding: 12px 14px;
+            border: 1.5px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1.08rem;
+            background: #f6f8fa;
+            transition: border 0.2s, box-shadow 0.2s;
+            box-shadow: 0 1px 4px rgba(37,117,252,0.04);
+        }
+        .nova-tarefa input[type="text"]:focus,
+        .nova-tarefa input[type="date"]:focus,
+        .nova-tarefa select:focus {
+            border-color: #2575fc;
+            outline: none;
+            box-shadow: 0 2px 8px #2575fc33;
+        }
+        .nova-tarefa button[type="submit"] {
+            background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.08rem;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 12px 22px;
+            box-shadow: 0 2px 8px #2575fc22;
+            transition: background 0.2s, transform 0.1s;
+        }
+        .nova-tarefa button[type="submit"]:hover {
+            background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+            transform: scale(1.04);
+        }
+        .board-tarefas {
+            display: flex;
+            gap: 24px;
+            margin-top: 32px;
+            justify-content: center;
+        }
+        .coluna-tarefas {
+            background: #e9eef6;
+            border-radius: 10px;
+            flex: 1;
+            padding: 18px 12px 24px 12px;
+            min-width: 280px;
+            max-width: 340px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .coluna-tarefas h2 {
+            font-size: 1.1em;
+            margin-bottom: 18px;
+            color: #3a3a3a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-align: center;
+            justify-content: center;
+        }
+        .card-tarefa {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            margin-bottom: 18px;
+            padding: 18px 16px 12px 16px;
+            transition: box-shadow 0.2s;
+            min-width: 180px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .card-tarefa.done {
+            opacity: 0.7;
+            text-decoration: line-through;
+        }
+        .acoes-tarefa {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        @media (max-width: 800px) {
+            .board-tarefas {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 900px) {
+            .board-tarefas {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .coluna-tarefas {
+                min-width: unset;
+                max-width: unset;
+            }
+        }
+        @media (max-width: 500px) {
+            .container-tarefas {
+                width: 95vw;
+                padding: 18px 6vw;
+            }
+            li {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            li form {
+                margin-left: 0;
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Hamburguer -->
+    <nav>
+        <input type="checkbox" id="menu-toggle" style="display:none;">
+        <label for="menu-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="menu">
+            <a href="/tasks">Minhas Tarefas</a>
+            <a href="#nova-tarefa" onclick="document.getElementById('nova-tarefa').scrollIntoView({behavior:'smooth'});">Cadastrar Nova Tarefa</a>
+            <a href="/login" onclick="return confirm('Deseja sair da sessão?')">Sair</a>
+        </div>
+    </nav>
+    <style>
+        nav {
+            position: fixed;
+            top: 18px;
+            left: 18px;
+            z-index: 100;
+        }
+        .menu-icon {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+            gap: 6px;
+        }
+        .menu-icon span {
+            display: block;
+            height: 5px;
+            width: 100%;
+            background: #2575fc;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+        #menu-toggle:checked + .menu-icon span:nth-child(1) {
+            transform: translateY(11px) rotate(45deg);
+        }
+        #menu-toggle:checked + .menu-icon span:nth-child(2) {
+            opacity: 0;
+        }
+        #menu-toggle:checked + .menu-icon span:nth-child(3) {
+            transform: translateY(-11px) rotate(-45deg);
+        }
+        .menu {
+            position: absolute;
+            top: 48px;
+            left: 0;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 16px #2575fc22;
+            padding: 18px 0;
+            min-width: 180px;
+            display: none;
+            flex-direction: column;
+            gap: 8px;
+            animation: fadeInMenu 0.3s;
+        }
+        #menu-toggle:checked ~ .menu {
+            display: flex;
+        }
+        .menu a {
+            color: #2575fc;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 22px;
+            border-radius: 6px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .menu a:hover {
+            background: #eaf1fb;
+            color: #1a5dcc;
+        }
+        @keyframes fadeInMenu {
+            from { opacity: 0; transform: translateY(-10px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        @media (max-width: 500px) {
+            .menu { min-width: 120px; }
+        }
+    </style>
+    <div class="container-tarefas">
+        <h1>Lista de Tarefas</h1>
+        <% if (typeof message !== 'undefined' && message) { %>
+            <div style="background:#eaf1fb; color:#2575fc; border-radius:8px; padding:10px 18px; margin-bottom:18px; text-align:center; font-weight:500;">
+                <%= message %>
+            </div>
+        <% } %>
+        <form id="nova-tarefa" class="nova-tarefa" action="/tasks/add" method="POST">
+            <input type="text" name="title" placeholder="Título da tarefa" required>
+            <input type="text" name="description" placeholder="Descrição">
+            <select name="status">
+                <option value="pendente">Pendente</option>
+                <option value="em andamento">Em andamento</option>
+                <option value="concluída">Concluída</option>
+            </select>
+            <input type="date" name="dueDate" placeholder="Data de vencimento">
+            <button type="submit">Adicionar</button>
+        </form>
+        <div class="board-tarefas">
+            <div class="coluna-tarefas">
+                <h2>Pendentes</h2>
+                <% tasks.filter(task => task.status === 'pendente').forEach(task => { %>
+                    <div class="card-tarefa" id="card-<%= task._id %>">
+                        <div class="view-mode">
+                            <strong><%= task.title %></strong><br>
+                            <small><%= task.description %></small><br>
+                            <small>Status: <%= task.status %></small>
+                            <% if (task.dueDate) { %>
+                                <br><small>Prazo: <%= new Date(task.dueDate).toLocaleDateString('pt-BR') %></small>
+                            <% } %>
+                            <div class="acoes-tarefa">
+                                <button type="button" onclick="toggleEditForm('<%= task._id %>')" title="Editar"><span>✏️</span>Editar</button>
+                                <form action="/tasks/done/<%= task._id %>" method="POST" style="display:inline;">
+                                    <button type="submit" title="Concluir"><span>✅</span>Concluir</button>
+                                </form>
+                                <form action="/tasks/delete/<%= task._id %>" method="POST" style="display:inline;">
+                                    <button type="submit" title="Excluir"><span>🗑️</span>Excluir</button>
+                                </form>
+                            </div>
+                        </div>
+                        <form class="edit-form" action="/tasks/edit/<%= task._id %>" method="POST" style="display:none; flex-direction:column; gap:8px; margin-top:8px;">
+                            <input type="text" name="title" value="<%= task.title %>" required>
+                            <input type="text" name="description" value="<%= task.description %>">
+                            <select name="status">
+                                <option value="pendente" <%= task.status==='pendente'?'selected':'' %>>Pendente</option>
+                                <option value="em andamento" <%= task.status==='em andamento'?'selected':'' %>>Em andamento</option>
+                                <option value="concluída" <%= task.status==='concluída'?'selected':'' %>>Concluída</option>
+                            </select>
+                            <input type="date" name="dueDate" value="<%= task.dueDate ? new Date(task.dueDate).toISOString().split('T')[0] : '' %>">
+                            <div style="display:flex; gap:8px;">
+                                <button type="submit">Salvar</button>
+                                <button type="button" onclick="toggleEditForm('<%= task._id %>')">Cancelar</button>
+                            </div>
+                        </form>
+                    </div>
+                <% }) %>
+            </div>
+            <div class="coluna-tarefas">
+                <h2>Em andamento</h2>
+                <% tasks.filter(task => task.status === 'em andamento').forEach(task => { %>
+                    <div class="card-tarefa">
+                        <strong><%= task.title %></strong><br>
+                        <small><%= task.description %></small><br>
+                        <small>Status: <%= task.status %></small>
+                        <% if (task.dueDate) { %>
+                            <br><small>Prazo: <%= new Date(task.dueDate).toLocaleDateString('pt-BR') %></small>
+                        <% } %>
+                        <div class="acoes-tarefa">
+                            <form action="/tasks/edit/<%= task._id %>" method="GET" style="display:inline;">
+                                <button type="submit" title="Editar"><span>✏️</span>Editar</button>
+                            </form>
+                            <form action="/tasks/done/<%= task._id %>" method="POST" style="display:inline;">
+                                <button type="submit" title="Concluir"><span>✅</span>Concluir</button>
+                            </form>
+                            <form action="/tasks/delete/<%= task._id %>" method="POST" style="display:inline;">
+                                <button type="submit" title="Excluir"><span>🗑️</span>Excluir</button>
+                            </form>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+            <div class="coluna-tarefas">
+                <h2>Concluídas</h2>
+                <% tasks.filter(task => task.status === 'concluída').forEach(task => { %>
+                    <div class="card-tarefa done">
+                        <strong><%= task.title %></strong><br>
+                        <small><%= task.description %></small><br>
+                        <small>Status: <%= task.status %></small>
+                        <% if (task.dueDate) { %>
+                            <br><small>Prazo: <%= new Date(task.dueDate).toLocaleDateString('pt-BR') %></small>
+                        <% } %>
+                        <div class="acoes-tarefa">
+                            <form action="/tasks/delete/<%= task._id %>" method="POST">
+                                <button type="submit" title="Excluir"><span>🗑️</span>Excluir</button>
+                            </form>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleEditForm(id) {
+            const card = document.getElementById('card-' + id);
+            const view = card.querySelector('.view-mode');
+            const form = card.querySelector('.edit-form');
+            if (form.style.display === 'none') {
+                form.style.display = 'flex';
+                view.style.display = 'none';
+            } else {
+                form.style.display = 'none';
+                view.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

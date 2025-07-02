@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Task Manager</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #6a11cb 0%, #2575fc 100%);
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .container-login {
+            background: #fff;
+            margin-top: 32px;
+            padding: 36px 32px 28px 32px;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(37,117,252,0.13);
+            min-width: 320px;
+            max-width: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #2575fc;
+            margin-bottom: 28px;
+            text-align: center;
+            text-shadow: 1px 2px 8px rgba(0,0,0,0.10);
+            font-size: 2.1rem;
+            letter-spacing: 1px;
+        }
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        input[type="text"], input[type="password"], input[type="tel"], input[type="email"], select {
+            padding: 12px 14px;
+            border: 1.5px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1.08rem;
+            background: #f6f8fa;
+            transition: border 0.2s, box-shadow 0.2s;
+            box-shadow: 0 1px 4px rgba(37,117,252,0.04);
+        }
+        input[type="text"]:focus, input[type="password"]:focus, input[type="tel"]:focus, input[type="email"]:focus, select:focus {
+            border-color: #2575fc;
+            outline: none;
+            box-shadow: 0 2px 8px #2575fc33;
+        }
+        button[type="submit"] {
+            background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.08rem;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 12px 22px;
+            box-shadow: 0 2px 8px #2575fc22;
+            transition: background 0.2s, transform 0.1s;
+            margin-top: 8px;
+        }
+        button[type="submit"]:hover {
+            background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+            transform: scale(1.04);
+        }
+        @media (max-width: 500px) {
+            .container-login {
+                min-width: unset;
+                width: 95vw;
+                padding: 18px 6vw;
+            }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-login">
+        <h1>Login</h1>
+        <form action="/login" method="POST">
+            <input type="text" name="username" placeholder="Usuário" required>
+            <input type="password" name="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+</body>
+</html>
