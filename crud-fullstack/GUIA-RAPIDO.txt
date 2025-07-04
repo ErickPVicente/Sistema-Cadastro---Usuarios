@@ -1,0 +1,39 @@
+📋 GUIA RÁPIDO - PROJETO CRUD FULLSTACK
+==========================================
+
+🎯 PARA PROFESSORES/AVALIADORES:
+
+Método mais simples para testar:
+
+1️⃣ git clone https://github.com/ErickPVicente/Sistema-Cadastro---Usuarios.git
+2️⃣ cd Sistema-Cadastro---Usuarios/crud-fullstack  
+3️⃣ npm install concurrently
+4️⃣ npm run install-all
+5️⃣ npm start
+6️⃣ Acesse: http://localhost:3000
+
+⚡ OU execute: ./install.sh && ./run.sh
+
+🔧 TECNOLOGIAS:
+- Backend: Node.js + TypeScript + Express (Porta 3001)
+- Frontend: React + TypeScript (Porta 3000)
+- Banco: Memória (dados resetam ao reiniciar)
+
+✅ FUNCIONALIDADES PARA TESTAR:
+- Cadastrar usuário (Nome, Email, Senha)
+- Listar usuários
+- Excluir usuários
+- Interface responsiva
+
+📱 DADOS DE TESTE:
+Nome: João Silva
+Email: joao@teste.com  
+Senha: 123456
+
+🆘 PROBLEMAS COMUNS:
+- "Porta em uso": pkill -f node
+- "Module not found": rm -rf node_modules && npm install
+- Scripts não executam: chmod +x *.sh
+
+👤 Autor: Erick P. Vicente
+📚 Projeto: Faculdade - Sistema CRUD FullStack
