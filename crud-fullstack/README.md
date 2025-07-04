@@ -1,18 +1,14 @@
 # Sistema de Cadastro de Usuários - CRUD FullStack
 
-**Projeto de Faculdade** - Sistema completo para gerenciamento de usuários com backend ## 📝 Como Usar
+**Projeto de Faculdade** - Sistema completo para gerenciamento de usuários com backend em Node.js e fronte- O projeto está pronto para integração com banco de dados real
 
-1. **Acesse** `http://localhost:3000`
-2. **Preencha** o formulário com nome, email e senha
-3. **Clique** em "Criar Usuário"
-4. **Visualize** a lista de usuários cadastrados
-5. **Edite** usuários clicando no botão "✏️ Editar"
-6. **Exclua** usuários clicando no botão "🗑️ Excluir"
+## 👤 Desenvolvido por
 
-**👤 Usuário de teste padrão:**
-- Nome: Administrador
-- Email: admin@admin.com
-- Senha: 12345 ✅ **Estado Atual: CRUD COMPLETO**
+**Erick Pacheco Vicente** - Projeto Curso: Análise e Desenvolvimento de Sistemas
+
+---
+
+Execute os comandos na seção "Execução Rápida" e acesse `http://localhost:3000` para testar todas as funcionalidades.**Estado Atual: CRUD COMPLETO**
 
 Este projeto implementa **todas as 4 operações CRUD**:
 - ✅ **C**reate (Criar usuários) - Formulário de cadastro
@@ -21,8 +17,6 @@ Este projeto implementa **todas as 4 operações CRUD**:
 - ✅ **D**elete (Excluir usuários) - Exclusão com confirmação
 
 **Sistema CRUD FullStack totalmente funcional e pronto para uso acadêmico!**
-
-## 👤 Desenvolvido por em React.
 
 ## 🚀 Como Executar o Projeto (IMPORTANTE)
 
@@ -149,13 +143,14 @@ crud-fullstack/
 └── README.md
 ```
 
-## � Como Usar
+## 📝 Como Usar
 
 1. **Acesse** `http://localhost:3000`
 2. **Preencha** o formulário com nome, email e senha
 3. **Clique** em "Criar Usuário"
 4. **Visualize** a lista de usuários cadastrados
-5. **Exclua** usuários clicando no botão "Excluir"
+5. **Edite** usuários clicando no botão "✏️ Editar"
+6. **Exclua** usuários clicando no botão "🗑️ Excluir"
 
 **👤 Usuário de teste padrão:**
 - Nome: Administrador
