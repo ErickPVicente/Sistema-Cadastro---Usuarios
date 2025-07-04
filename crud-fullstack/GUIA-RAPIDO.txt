@@ -26,14 +26,14 @@ Método mais simples para testar:
 - Interface responsiva
 
 📱 DADOS DE TESTE:
-Nome: João Silva
-Email: joao@teste.com  
-Senha: 123456
+Nome: Administrador
+Email: admin@admin.com  
+Senha: 12345
 
 🆘 PROBLEMAS COMUNS:
 - "Porta em uso": pkill -f node
 - "Module not found": rm -rf node_modules && npm install
 - Scripts não executam: chmod +x *.sh
 
-👤 Autor: Erick P. Vicente
-📚 Projeto: Faculdade - Sistema CRUD FullStack
+👤 Autor: Erick Pacheco Vicente
+📚 Projeto Curso: Análise e Desenvolvimento de Sistemas

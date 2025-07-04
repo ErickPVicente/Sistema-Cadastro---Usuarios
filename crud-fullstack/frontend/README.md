@@ -111,7 +111,7 @@ A aplicação estará disponível em `http://localhost:3000`
 
 - **Nome**: Obrigatório, mínimo 2 caracteres
 - **Email**: Formato válido obrigatório
-- **Senha**: Mínimo 6 caracteres obrigatório
+- **Senha**: Mínimo 5 caracteres obrigatório
 
 ## 🛡️ Tratamento de Erros
 

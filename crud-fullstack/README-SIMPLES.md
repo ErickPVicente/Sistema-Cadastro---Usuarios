@@ -174,7 +174,7 @@ crud-fullstack/
 
 ## 👤 Desenvolvido por
 
-**Erick P. Vicente** - Projeto de Faculdade
+**Erick Pacheco Vicente** - Projeto Curso: Análise e Desenvolvimento de Sistemas
 
 ---
 
@@ -186,4 +186,4 @@ Se tiver problemas, verifique:
 3. Execute os comandos na ordem correta
 4. Verifique se não há erros no terminal
 
-**Para o Professor/Avaliador:** Execute `./install.sh` e depois `./run.sh` para testar rapidamente!
+Execute `./install.sh` e depois `./run.sh` para testar rapidamente!

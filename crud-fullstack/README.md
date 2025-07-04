@@ -99,7 +99,7 @@ curl http://localhost:3001/api/users
 # Criar usuário
 curl -X POST http://localhost:3001/api/users \
   -H "Content-Type: application/json" \
-  -d '{"name":"Teste","email":"teste@email.com","password":"123456"}'
+  -d '{"name":"Administrador","email":"admin@admin.com","password":"12345"}'
 
 # Status do servidor
 curl http://localhost:3001/health
@@ -133,6 +133,11 @@ crud-fullstack/
 4. **Visualize** a lista de usuários cadastrados
 5. **Exclua** usuários clicando no botão "Excluir"
 
+**👤 Usuário de teste padrão:**
+- Nome: Administrador
+- Email: admin@admin.com
+- Senha: 12345
+
 ## 💾 Observações Importantes
 
 - Os dados são armazenados **apenas na memória**
@@ -146,4 +151,4 @@ crud-fullstack/
 
 ---
 
-⚠️ **Para o Professor/Avaliador:** Execute os comandos na seção "Execução Rápida" e acesse `http://localhost:3000` para testar todas as funcionalidades.
+Execute os comandos na seção "Execução Rápida" e acesse `http://localhost:3000` para testar todas as funcionalidades.

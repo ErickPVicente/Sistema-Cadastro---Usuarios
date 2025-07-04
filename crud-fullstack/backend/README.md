@@ -77,9 +77,9 @@ O servidor estará disponível em `http://localhost:3001`
 curl -X POST http://localhost:3001/api/users \
   -H "Content-Type: application/json" \
   -d '{
-    "name": "João Silva",
-    "email": "joao@exemplo.com",
-    "password": "123456"
+    "name": "Administrador",
+    "email": "admin@admin.com",
+    "password": "12345"
   }'
 ```
 

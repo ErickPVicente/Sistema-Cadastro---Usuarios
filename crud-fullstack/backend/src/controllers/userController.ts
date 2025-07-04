@@ -12,9 +12,9 @@ interface User {
 let users: User[] = [
     {
         id: '1',
-        name: 'João Silva',
-        email: 'joao@example.com',
-        password: '123456',
+        name: 'Administrador',
+        email: 'admin@admin.com',
+        password: '12345',
         createdAt: new Date()
     }
 ];

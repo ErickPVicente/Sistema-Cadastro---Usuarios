@@ -19,6 +19,11 @@ const UserForm: React.FC<UserFormProps> = ({ onUserAdded, initialData }) => {
       return;
     }
 
+    if (password.length < 5) {
+      alert('A senha deve ter pelo menos 5 caracteres');
+      return;
+    }
+
     setLoading(true);
     
     try {
@@ -116,7 +121,7 @@ const UserForm: React.FC<UserFormProps> = ({ onUserAdded, initialData }) => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          minLength={6}
+          minLength={5}
           style={{
             width: '100%',
             padding: '8px 12px',
@@ -124,7 +129,7 @@ const UserForm: React.FC<UserFormProps> = ({ onUserAdded, initialData }) => {
             borderRadius: '4px',
             fontSize: '14px'
           }}
-          placeholder="Mínimo 6 caracteres"
+          placeholder="Mínimo 5 caracteres"
         />
       </div>
       
