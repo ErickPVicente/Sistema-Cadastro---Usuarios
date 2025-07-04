@@ -1,8 +1,6 @@
 📋 GUIA RÁPIDO - PROJETO CRUD FULLSTACK
 ==========================================
 
-🎯 PARA PROFESSORES/AVALIADORES:
-
 Método mais simples para testar:
 
 1️⃣ git clone https://github.com/ErickPVicente/Sistema-Cadastro---Usuarios.git
@@ -33,6 +31,7 @@ Senha: 12345
 🆘 PROBLEMAS COMUNS:
 - "Porta em uso": pkill -f node
 - "Module not found": rm -rf node_modules && npm install
+- "ERR_OSSL_EVP_UNSUPPORTED": Já corrigido no package.json
 - Scripts não executam: chmod +x *.sh
 
 👤 Autor: Erick Pacheco Vicente
