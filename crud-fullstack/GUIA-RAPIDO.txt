@@ -56,6 +56,7 @@ Senha: 12345
 - "ERR_OSSL_EVP_UNSUPPORTED": Já corrigido no package.json
 - Scripts não executam: chmod +x *.sh
 - Campos não clicáveis: F12 → Console → verificar erros JS
+- "minimatch types not found": npm install --save-dev @types/minimatch
 
 🔧 DEBUG:
 - Abra F12 no navegador para ver logs de interação
