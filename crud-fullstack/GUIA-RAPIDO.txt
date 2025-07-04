@@ -3,8 +3,8 @@
 
 Método mais simples para testar:
 
-1️⃣ git clone https://github.com/ErickPVicente/Sistema-Cadastro---Usuarios.git
-2️⃣ cd Sistema-Cadastro---Usuarios/crud-fullstack  
+1️⃣ git clone https://github.com/ErickPVicente/Sistema-Cadastro--Usuarios.git
+2️⃣ cd Sistema-Cadastro--Usuarios/crud-fullstack  
 3️⃣ npm install concurrently
 4️⃣ npm run install-all
 5️⃣ npm start

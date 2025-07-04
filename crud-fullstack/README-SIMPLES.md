@@ -8,8 +8,8 @@
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/ErickPVicente/Sistema-Cadastro---Usuarios.git
-   cd Sistema-Cadastro---Usuarios/crud-fullstack
+   git clone https://github.com/ErickPVicente/Sistema-Cadastro--Usuarios.git
+   cd Sistema-Cadastro--Usuarios/crud-fullstack
    ```
 
 2. **Instale as dependências:**
@@ -28,8 +28,8 @@
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/ErickPVicente/Sistema-Cadastro---Usuarios.git
-   cd Sistema-Cadastro---Usuarios/crud-fullstack
+   git clone https://github.com/ErickPVicente/Sistema-Cadastro--Usuarios.git
+   cd Sistema-Cadastro--Usuarios/crud-fullstack
    ```
 
 2. **Execute o backend (Terminal 1):**
