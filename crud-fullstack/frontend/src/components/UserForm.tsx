@@ -60,76 +60,93 @@ const UserForm: React.FC<UserFormProps> = ({ onUserAdded, initialData }) => {
 
   return (
     <form onSubmit={handleSubmit} style={{ 
-      display: 'grid', 
+      display: 'block', 
       gap: '15px', 
       maxWidth: '400px', 
       margin: '0 auto',
       padding: '20px',
       border: '1px solid #ddd',
       borderRadius: '8px',
-      backgroundColor: '#f8f9fa'
+      backgroundColor: '#ffffff',
+      position: 'relative',
+      zIndex: 1
     }}>
-      <div>
+      <div style={{ marginBottom: '15px' }}>
         <label htmlFor="name" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>
           Nome:
         </label>
         <input
           type="text"
           id="name"
+          name="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
           style={{
             width: '100%',
-            padding: '8px 12px',
-            border: '1px solid #ccc',
+            padding: '12px',
+            border: '2px solid #ccc',
             borderRadius: '4px',
-            fontSize: '14px'
+            fontSize: '16px',
+            outline: 'none',
+            cursor: 'text',
+            pointerEvents: 'auto'
           }}
           placeholder="Digite o nome completo"
+          autoComplete="off"
         />
       </div>
       
-      <div>
+      <div style={{ marginBottom: '15px' }}>
         <label htmlFor="email" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>
           Email:
         </label>
         <input
           type="email"
           id="email"
+          name="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
           style={{
             width: '100%',
-            padding: '8px 12px',
-            border: '1px solid #ccc',
+            padding: '12px',
+            border: '2px solid #ccc',
             borderRadius: '4px',
-            fontSize: '14px'
+            fontSize: '16px',
+            outline: 'none',
+            cursor: 'text',
+            pointerEvents: 'auto'
           }}
           placeholder="usuario@exemplo.com"
+          autoComplete="off"
         />
       </div>
       
-      <div>
+      <div style={{ marginBottom: '15px' }}>
         <label htmlFor="password" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>
           Senha:
         </label>
         <input
           type="password"
           id="password"
+          name="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
           minLength={5}
           style={{
             width: '100%',
-            padding: '8px 12px',
-            border: '1px solid #ccc',
+            padding: '12px',
+            border: '2px solid #ccc',
             borderRadius: '4px',
-            fontSize: '14px'
+            fontSize: '16px',
+            outline: 'none',
+            cursor: 'text',
+            pointerEvents: 'auto'
           }}
           placeholder="Mínimo 5 caracteres"
+          autoComplete="off"
         />
       </div>
       
@@ -137,6 +154,7 @@ const UserForm: React.FC<UserFormProps> = ({ onUserAdded, initialData }) => {
         type="submit" 
         disabled={loading}
         style={{
+          width: '100%',
           backgroundColor: loading ? '#6c757d' : '#007bff',
           color: 'white',
           border: 'none',
@@ -144,7 +162,8 @@ const UserForm: React.FC<UserFormProps> = ({ onUserAdded, initialData }) => {
           borderRadius: '4px',
           fontSize: '16px',
           cursor: loading ? 'not-allowed' : 'pointer',
-          marginTop: '10px'
+          marginTop: '10px',
+          pointerEvents: 'auto'
         }}
       >
         {loading ? 'Criando...' : 'Criar Usuário'}

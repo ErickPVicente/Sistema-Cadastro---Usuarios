@@ -18,21 +18,49 @@ Método mais simples para testar:
 - Banco: Memória (dados resetam ao reiniciar)
 
 ✅ FUNCIONALIDADES PARA TESTAR:
-- Cadastrar usuário (Nome, Email, Senha)
-- Listar usuários
-- Excluir usuários
-- Interface responsiva
+- Cadastrar usuário (Nome, Email, Senha) → Mensagem de sucesso
+- Listar usuários → Atualização automática
+- Editar usuários → Botão "✏️ Editar" com formulário inline
+- Excluir usuários → Confirmação + Mensagem de sucesso/erro
+- Interface responsiva → Mensagens visuais coloridas
 
 📱 DADOS DE TESTE:
 Nome: Administrador
 Email: admin@admin.com  
 Senha: 12345
 
+🖱️ TESTE DE INTERATIVIDADE:
+1. Clique nos campos de entrada - devem ficar com borda azul
+2. Digite texto - deve aparecer em tempo real
+3. Use Tab para navegar entre campos
+4. Clique no botão "Criar Usuário" - deve cadastrar e mostrar mensagem verde
+5. Veja a lista atualizar automaticamente
+6. Clique em "✏️ Editar" - deve abrir formulário de edição inline
+7. Modifique dados e clique "💾 Salvar" - deve atualizar o usuário
+8. Clique em "🗑️ Excluir" - deve pedir confirmação e mostrar mensagem
+
+💬 MENSAGENS DO SISTEMA:
+✅ Verde: Sucessos (cadastro, edição, exclusão)
+❌ Vermelho: Erros (falha na conexão, dados inválidos)
+⏰ Auto-desaparecem: 3-4 segundos
+
+🔄 OPERAÇÕES CRUD COMPLETAS:
+✅ CREATE - Cadastrar novos usuários
+✅ READ - Listar usuários existentes
+✅ UPDATE - Editar usuários (formulário inline)
+✅ DELETE - Excluir usuários com confirmação
+
 🆘 PROBLEMAS COMUNS:
 - "Porta em uso": pkill -f node
 - "Module not found": rm -rf node_modules && npm install
 - "ERR_OSSL_EVP_UNSUPPORTED": Já corrigido no package.json
 - Scripts não executam: chmod +x *.sh
+- Campos não clicáveis: F12 → Console → verificar erros JS
+
+🔧 DEBUG:
+- Abra F12 no navegador para ver logs de interação
+- Console deve mostrar cliques e mudanças nos campos
+- Backend: http://localhost:3001/api/users (deve retornar JSON)
 
 👤 Autor: Erick Pacheco Vicente
 📚 Projeto Curso: Análise e Desenvolvimento de Sistemas

@@ -1,10 +1,32 @@
 # Sistema de Cadastro de Usuários - CRUD FullStack
 
-**Projeto de Faculdade** - Sistema completo para gerenciamento de usuários com backend em Node.js e frontend em React.
+**Projeto de Faculdade** - Sistema completo para gerenciamento de usuários com backend ## 📝 Como Usar
+
+1. **Acesse** `http://localhost:3000`
+2. **Preencha** o formulário com nome, email e senha
+3. **Clique** em "Criar Usuário"
+4. **Visualize** a lista de usuários cadastrados
+5. **Edite** usuários clicando no botão "✏️ Editar"
+6. **Exclua** usuários clicando no botão "🗑️ Excluir"
+
+**👤 Usuário de teste padrão:**
+- Nome: Administrador
+- Email: admin@admin.com
+- Senha: 12345 ✅ **Estado Atual: CRUD COMPLETO**
+
+Este projeto implementa **todas as 4 operações CRUD**:
+- ✅ **C**reate (Criar usuários) - Formulário de cadastro
+- ✅ **R**ead (Listar usuários) - Lista com atualização automática
+- ✅ **U**pdate (Editar usuários) - Formulário inline de edição
+- ✅ **D**elete (Excluir usuários) - Exclusão com confirmação
+
+**Sistema CRUD FullStack totalmente funcional e pronto para uso acadêmico!**
+
+## 👤 Desenvolvido por em React.
 
 ## 🚀 Como Executar o Projeto (IMPORTANTE)
 
-### 🏆 Método 1: EXECUÇÃO SUPER SIMPLES (RECOMENDADO PARA PROFESSORES)
+### 🏆 Método 1: EXECUÇÃO SUPER SIMPLES
 
 ```bash
 git clone https://github.com/ErickPVicente/Sistema-Cadastro---Usuarios.git
@@ -61,11 +83,13 @@ npm start
 
 ## 📱 Funcionalidades
 
-- ✅ Cadastrar novos usuários
-- ✅ Listar todos os usuários
-- ✅ Excluir usuários
+- ✅ **C**adastrar novos usuários (CREATE)
+- ✅ **L**istar todos os usuários (READ)
+- ✅ **E**ditar usuários existentes (UPDATE) - *Implementado com formulário inline*
+- ✅ **E**xcluir usuários (DELETE)
 - ✅ Interface responsiva
 - ✅ Validação de formulários
+- ✅ Mensagens de feedback visual
 
 ## 🔧 Se algo der errado...
 
@@ -145,7 +169,17 @@ crud-fullstack/
 - Isso é normal para um projeto de demonstração
 - O projeto está pronto para integração com banco de dados real
 
-## 👤 Desenvolvido por
+## � **Estado Atual: CRUD Incompleto**
+
+Este projeto implementa **3 das 4 operações CRUD**:
+- ✅ **C**reate (Criar usuários)
+- ✅ **R**ead (Listar usuários) 
+- ❌ **U**pdate (Editar usuários) - *API pronta, interface pendente*
+- ✅ **D**elete (Excluir usuários)
+
+**Para ser um CRUD completo, precisa implementar a funcionalidade de EDIÇÃO no frontend.**
+
+## �👤 Desenvolvido por
 
 **Erick Pacheco Vicente** - Projeto Curso: Análise e Desenvolvimento de Sistemas
 
