@@ -2,11 +2,11 @@
 
 ## Descrição
 
-Task Manager é um sistema web para gerenciamento de tarefas, com interface moderna estilo kanban (board), onde cada tarefa é exibida como um cartão visual em colunas separadas por status: Pendentes, Em andamento e Concluídas. O sistema é voltado para uso individual (apenas um usuário) e permite:
+Task Manager é um sistema web para gerenciamento de tarefas, com interface moderna estilo(board), onde cada tarefa é exibida como um cartão visual em colunas separadas por status: Pendentes, Em andamento e Concluídas. O sistema é voltado para uso individual (apenas um usuário) e permite:
 
 - Cadastro, edição e exclusão de tarefas
 - Mudança de status das tarefas
-- Visualização das tarefas em formato de board (kanban)
+- Visualização das tarefas em formato de board
 - Login seguro (sem registro de novos usuários)
 
 ## Tecnologias Utilizadas

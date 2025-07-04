@@ -9,6 +9,18 @@ const Task = require('./models/Task');
 
 const app = express();
 
+// --- AJUSTE DE CONEXÃO MONGODB ---
+const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/taskmanager';
+console.log('Conectando ao MongoDB em:', mongoUri);
+
+mongoose.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('MongoDB conectado com sucesso!'))
+    .catch((err) => {
+        console.error('Erro ao conectar ao MongoDB:', err.message);
+        process.exit(1);
+    });
+// --- FIM AJUSTE ---
+
 // Configurar EJS como engine de views
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
@@ -16,8 +28,6 @@ app.set('views', __dirname + '/views');
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // Adicionado para tratar formulários HTML
-
-mongoose.connect(process.env.MONGODB_URI);
 
 app.use('/api/tasks', tasksRouter);
 
