@@ -25,7 +25,7 @@ Este projeto implementa **todas as 4 operações CRUD**:
 ```bash
 git clone https://github.com/ErickPVicente/Sistema-Cadastro--Usuarios.git
 cd Sistema-Cadastro--Usuarios/crud-fullstack
-npm install concurrently
+npm install
 npm run install-all
 npm start
 ```
